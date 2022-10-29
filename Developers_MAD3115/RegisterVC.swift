@@ -13,6 +13,17 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var VehicleColorPopUpBtn: UIButton!
     
     @IBOutlet weak var EmployeeTypePopUpBtn: UIButton!
+    
+    
+    @IBOutlet weak var firstNametxt: UITextField!
+    @IBOutlet weak var lastNametxt: UITextField!
+    @IBOutlet weak var birthYeartxt: UITextField!
+    @IBOutlet weak var monthlySalarytxt: UITextField!
+    @IBOutlet weak var occupationRatetxt: UITextField!
+    @IBOutlet weak var employeeIdtxt: UITextField!
+    @IBOutlet weak var vehicleModeltxt: UITextField!
+    @IBOutlet weak var plateNumbertxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         vehiclePopupButton()

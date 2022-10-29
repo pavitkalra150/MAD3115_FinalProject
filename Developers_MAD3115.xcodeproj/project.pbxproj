@@ -14,6 +14,7 @@
 		33B7612D2909F01900AF9E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B7612C2909F01900AF9E83 /* Assets.xcassets */; };
 		33B761302909F01900AF9E83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B7612E2909F01900AF9E83 /* LaunchScreen.storyboard */; };
 		33B761382909F6C900AF9E83 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B761372909F6C900AF9E83 /* RegisterVC.swift */; };
+		33B7613A290DA02300AF9E83 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B76139290DA02300AF9E83 /* EmployeeListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		33B7612F2909F01900AF9E83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33B761312909F01900AF9E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33B761372909F6C900AF9E83 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		33B76139290DA02300AF9E83 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				33B7612E2909F01900AF9E83 /* LaunchScreen.storyboard */,
 				33B761312909F01900AF9E83 /* Info.plist */,
 				33B761372909F6C900AF9E83 /* RegisterVC.swift */,
+				33B76139290DA02300AF9E83 /* EmployeeListVC.swift */,
 			);
 			path = Developers_MAD3115;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				33B761282909F01800AF9E83 /* ViewController.swift in Sources */,
 				33B761382909F6C900AF9E83 /* RegisterVC.swift in Sources */,
+				33B7613A290DA02300AF9E83 /* EmployeeListVC.swift in Sources */,
 				33B761242909F01800AF9E83 /* AppDelegate.swift in Sources */,
 				33B761262909F01800AF9E83 /* SceneDelegate.swift in Sources */,
 			);

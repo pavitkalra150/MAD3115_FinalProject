@@ -50,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxr-KN-pnj">
-                                <rect key="frame" x="48" y="739.33333333333337" width="294" height="34.333333333333371"/>
+                                <rect key="frame" x="48" y="739" width="294" height="34.333333333333371"/>
                                 <color key="tintColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Register">
@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="2ed-9V-lmk">
-                                <rect key="frame" x="211" y="139.00000000000003" width="163" height="511.66666666666674"/>
+                                <rect key="frame" x="211" y="138.66666666666666" width="163" height="511.66666666666674"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6N-JS-jZh">
                                         <rect key="frame" x="0.0" y="0.0" width="163" height="34"/>
@@ -153,7 +153,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-Ji-lOn">
-                                <rect key="frame" x="16" y="144" width="185" height="504"/>
+                                <rect key="frame" x="16" y="143.66666666666663" width="185" height="504"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG7-dF-mIt">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="24"/>
@@ -239,14 +239,39 @@
                             <constraint firstItem="ANN-lN-tLz" firstAttribute="leading" secondItem="x5q-dd-SDe" secondAttribute="leading" constant="89" id="wNm-Kn-BB0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rx7-y7-ZZR"/>
                     <connections>
                         <outlet property="EmployeeTypePopUpBtn" destination="moS-jU-dD1" id="FPL-Zp-aCg"/>
-                        <outlet property="VehicleColorPopUpBtn" destination="UmI-To-WeK" id="uvQ-ea-swP"/>
+                        <outlet property="VehicleColorPopUpBtn" destination="UmI-To-WeK" id="HGC-1P-UAI"/>
+                        <outlet property="birthYeartxt" destination="Lbi-dr-IH1" id="5Le-cg-FkU"/>
+                        <outlet property="employeeIdtxt" destination="eyt-gz-5Vi" id="R48-vk-4sv"/>
+                        <outlet property="firstNametxt" destination="T6N-JS-jZh" id="J0U-YE-mwx"/>
+                        <outlet property="lastNametxt" destination="iZf-71-mWo" id="dmb-X6-Ffr"/>
+                        <outlet property="monthlySalarytxt" destination="7Zc-ZY-VHh" id="VM0-ei-AgC"/>
+                        <outlet property="occupationRatetxt" destination="u06-pA-sck" id="q3U-Ip-ZWr"/>
+                        <outlet property="plateNumbertxt" destination="Hw7-yi-8b6" id="T3L-gb-Ez2"/>
+                        <outlet property="vehicleModeltxt" destination="wY7-3e-ooU" id="THc-PS-db6"/>
+                        <segue destination="uyY-rD-Cq5" kind="custom" id="2X7-IE-4xP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9B-7b-Igy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809.2307692307691" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="1811" y="4"/>
+        </scene>
+        <!--Employee ListVC-->
+        <scene sceneID="hbA-Po-iXI">
+            <objects>
+                <viewController storyboardIdentifier="ListVC" id="uyY-rD-Cq5" customClass="EmployeeListVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gf1-l0-LDJ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Lj3-Cp-ZId"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fjq-O3-kpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2643" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xAx-Of-qL1">
