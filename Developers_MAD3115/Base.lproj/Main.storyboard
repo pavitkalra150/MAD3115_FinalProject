@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,18 +39,121 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043.0769230769231" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="1018" y="4"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="Z4p-I5-4g3">
             <objects>
-                <viewController storyboardIdentifier="RegisterScene" id="mYa-A6-acM" customClass="RegisterVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterScene" id="mYa-A6-acM" customClass="RegisterVC" customModule="Developers_MAD3115" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rzW-fo-xDS">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="nRz-Rl-7L9">
-                                <rect key="frame" x="16" y="139.66666666666663" width="185" height="504"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxr-KN-pnj">
+                                <rect key="frame" x="48" y="739.33333333333337" width="294" height="34.333333333333371"/>
+                                <color key="tintColor" systemColor="systemGray5Color"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGray5Color"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Registration Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANN-lN-tLz">
+                                <rect key="frame" x="89" y="69" width="213" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="2ed-9V-lmk">
+                                <rect key="frame" x="211" y="139.00000000000003" width="163" height="511.66666666666674"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6N-JS-jZh">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZf-71-mWo">
+                                        <rect key="frame" x="0.0" y="48" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="birth year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-dr-IH1">
+                                        <rect key="frame" x="0.0" y="96" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="monthly salary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Zc-ZY-VHh">
+                                        <rect key="frame" x="0.0" y="144.00000000000003" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="occupation rate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u06-pA-sck">
+                                        <rect key="frame" x="0.0" y="192.00000000000003" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="employee id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyt-gz-5Vi">
+                                        <rect key="frame" x="0.0" y="240" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moS-jU-dD1">
+                                        <rect key="frame" x="0.0" y="288" width="163" height="34.333333333333314"/>
+                                        <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <menu key="menu" id="TbG-Nb-G3n">
+                                            <children>
+                                                <command title="Item 1" id="jYM-L7-P5i"/>
+                                                <command title="Item 2" id="iMg-G3-yyS"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Button">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="spf-78-2g8">
+                                        <rect key="frame" x="0.0" y="336.33333333333337" width="163" height="32"/>
+                                        <segments>
+                                            <segment title="Car"/>
+                                            <segment title="Motorbike"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wY7-3e-ooU">
+                                        <rect key="frame" x="0.0" y="381.33333333333337" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="plate number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hw7-yi-8b6">
+                                        <rect key="frame" x="0.0" y="429.33333333333337" width="163" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-To-WeK">
+                                        <rect key="frame" x="0.0" y="477.33333333333337" width="163" height="34.333333333333314"/>
+                                        <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <menu key="menu" id="i4l-BD-Dmq">
+                                            <children>
+                                                <command title="Item 1" id="WMy-3N-2DH"/>
+                                                <command title="Item 2" id="Bpj-iB-8ld"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Button">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-Ji-lOn">
+                                <rect key="frame" x="16" y="144" width="185" height="504"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG7-dF-mIt">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="24"/>
@@ -119,97 +223,26 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="YN8-JE-yzD">
-                                <rect key="frame" x="217" y="134.66666666666663" width="163" height="471"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6N-JS-jZh">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZf-71-mWo">
-                                        <rect key="frame" x="0.0" y="55" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="birth year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-dr-IH1">
-                                        <rect key="frame" x="0.0" y="110" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="monthly salary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Zc-ZY-VHh">
-                                        <rect key="frame" x="0.0" y="165.00000000000003" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="occupation rate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u06-pA-sck">
-                                        <rect key="frame" x="0.0" y="220.00000000000003" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="employee id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyt-gz-5Vi">
-                                        <rect key="frame" x="0.0" y="275" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="spf-78-2g8">
-                                        <rect key="frame" x="0.0" y="330" width="163" height="32"/>
-                                        <segments>
-                                            <segment title="Car"/>
-                                            <segment title="Motorbike"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wY7-3e-ooU">
-                                        <rect key="frame" x="0.0" y="382" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="plate number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hw7-yi-8b6">
-                                        <rect key="frame" x="0.0" y="437" width="163" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxr-KN-pnj">
-                                <rect key="frame" x="48" y="739.66666666666663" width="294" height="34.333333333333371"/>
-                                <color key="tintColor" systemColor="systemGray5Color"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Register">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="systemGray5Color"/>
-                                </buttonConfiguration>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Registration Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANN-lN-tLz">
-                                <rect key="frame" x="89" y="69" width="213" height="34"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x5q-dd-SDe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ANN-lN-tLz" firstAttribute="centerX" secondItem="rzW-fo-xDS" secondAttribute="centerX" id="Aud-Ab-kYe"/>
-                            <constraint firstItem="qxr-KN-pnj" firstAttribute="top" secondItem="nRz-Rl-7L9" secondAttribute="bottom" constant="96" id="HNo-fK-tAb"/>
-                            <constraint firstItem="qxr-KN-pnj" firstAttribute="leading" secondItem="x5q-dd-SDe" secondAttribute="leading" constant="48" id="O6d-oM-zlg"/>
-                            <constraint firstItem="ANN-lN-tLz" firstAttribute="top" secondItem="x5q-dd-SDe" secondAttribute="top" constant="22" id="feR-Tf-qn1"/>
-                            <constraint firstItem="nRz-Rl-7L9" firstAttribute="top" secondItem="ANN-lN-tLz" secondAttribute="bottom" constant="37" id="j07-CK-yp0"/>
-                            <constraint firstItem="YN8-JE-yzD" firstAttribute="top" secondItem="ANN-lN-tLz" secondAttribute="bottom" constant="32" id="koe-op-uzo"/>
-                            <constraint firstItem="YN8-JE-yzD" firstAttribute="leading" secondItem="nRz-Rl-7L9" secondAttribute="trailing" constant="16" id="sVz-4L-vxB"/>
-                            <constraint firstItem="ANN-lN-tLz" firstAttribute="centerX" secondItem="qxr-KN-pnj" secondAttribute="centerX" id="thH-Il-Vlm"/>
-                            <constraint firstItem="ANN-lN-tLz" firstAttribute="leading" secondItem="x5q-dd-SDe" secondAttribute="leading" constant="89" id="xJ5-EB-ydC"/>
-                            <constraint firstItem="nRz-Rl-7L9" firstAttribute="leading" secondItem="rzW-fo-xDS" secondAttribute="leadingMargin" id="zOp-Ny-Tz0"/>
+                            <constraint firstItem="2ed-9V-lmk" firstAttribute="trailing" secondItem="rzW-fo-xDS" secondAttribute="trailingMargin" id="5fh-vG-4av"/>
+                            <constraint firstItem="vdg-Ji-lOn" firstAttribute="leading" secondItem="rzW-fo-xDS" secondAttribute="leadingMargin" id="GUN-cF-zjm"/>
+                            <constraint firstItem="ANN-lN-tLz" firstAttribute="top" secondItem="x5q-dd-SDe" secondAttribute="top" constant="22" id="IGd-t9-m3l"/>
+                            <constraint firstItem="vdg-Ji-lOn" firstAttribute="top" secondItem="ANN-lN-tLz" secondAttribute="bottom" constant="41" id="WzM-fK-wf6"/>
+                            <constraint firstItem="ANN-lN-tLz" firstAttribute="centerX" secondItem="rzW-fo-xDS" secondAttribute="centerX" id="Yv6-oC-QUr"/>
+                            <constraint firstItem="ANN-lN-tLz" firstAttribute="centerX" secondItem="qxr-KN-pnj" secondAttribute="centerX" id="d1U-RP-VbY"/>
+                            <constraint firstItem="2ed-9V-lmk" firstAttribute="top" secondItem="ANN-lN-tLz" secondAttribute="bottom" constant="36.000000000000028" id="ekN-dt-eu4"/>
+                            <constraint firstItem="qxr-KN-pnj" firstAttribute="leading" secondItem="x5q-dd-SDe" secondAttribute="leading" constant="48" id="kOp-3i-Ro9"/>
+                            <constraint firstItem="qxr-KN-pnj" firstAttribute="top" secondItem="2ed-9V-lmk" secondAttribute="bottom" constant="88.666666666666515" id="rfv-eq-jb3"/>
+                            <constraint firstItem="ANN-lN-tLz" firstAttribute="leading" secondItem="x5q-dd-SDe" secondAttribute="leading" constant="89" id="wNm-Kn-BB0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="EmployeeTypePopUpBtn" destination="moS-jU-dD1" id="FPL-Zp-aCg"/>
+                        <outlet property="VehicleColorPopUpBtn" destination="UmI-To-WeK" id="uvQ-ea-swP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9B-7b-Igy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,6 +268,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -243,6 +279,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

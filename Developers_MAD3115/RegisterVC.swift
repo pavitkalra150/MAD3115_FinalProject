@@ -9,21 +9,46 @@ import UIKit
 
 class RegisterVC: UIViewController {
 
+    
+    @IBOutlet weak var VehicleColorPopUpBtn: UIButton!
+    
+    @IBOutlet weak var EmployeeTypePopUpBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        vehiclePopupButton()
+        empTypePopupButton()
     }
     
+    
+    func vehiclePopupButton(){
 
-    /*
-    // MARK: - Navigation
+        let optionClosure = {(action : UIAction) in
+            print(action.title)}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        VehicleColorPopUpBtn.menu = UIMenu(children : [
+            UIAction(title : "Choose Color", state : .on, handler: optionClosure),
+            UIAction(title : "Red", handler: optionClosure),
+            UIAction(title : "Blue", handler: optionClosure),
+            UIAction(title : "Yellow", handler: optionClosure),
+            UIAction(title : "Green", handler: optionClosure),
+            UIAction(title : "Orange", handler: optionClosure),
+            UIAction(title : "Purple", handler: optionClosure),
+            UIAction(title : "Pink", handler: optionClosure),
+            UIAction(title : "Brown", handler: optionClosure),
+            UIAction(title : "White", handler: optionClosure),
+            UIAction(title : "Black", handler: optionClosure),
+            UIAction(title : "Beige", handler: optionClosure)])
     }
-    */
+    
+    func empTypePopupButton(){
 
+        let optionClosure = {(action : UIAction) in
+            print(action.title)}
+
+        EmployeeTypePopUpBtn.menu = UIMenu(children : [
+            UIAction(title : "Choose Type", state : .on, handler: optionClosure),
+            UIAction(title : "Manager", handler: optionClosure),
+            UIAction(title : "Programmer", handler: optionClosure),
+            UIAction(title : "Tester", handler: optionClosure)])
+    }
 }
