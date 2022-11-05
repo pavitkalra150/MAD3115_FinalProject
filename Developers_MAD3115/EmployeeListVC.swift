@@ -18,6 +18,9 @@ struct Employees {
     let plateNumber: String?
     let vehicle: String?
     let vehicleColor: String?
+    let calculateInt: String?
+    
+    
     //let employeeType: String?
 }
 
@@ -30,6 +33,7 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(employeeNames)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

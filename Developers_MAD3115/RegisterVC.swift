@@ -37,6 +37,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var vehicleSeg: UISegmentedControl!
     var userInfo:String = ""
     var vehicle: String!
+    var calculateInt: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         vehiclePopupButton()
@@ -103,30 +104,35 @@ class RegisterVC: UIViewController {
         case 0:
             userInfo += "\n Car"
             userInfo += "\ncar Type : " + cartypetxt.text!
-            //vehicle = "Car"
+            vehicle = "Car" + cartypetxt.text!
         case 1:
             userInfo += "\n Motorbike"
             switch sidecarseg.selectedSegmentIndex{
             case 0:
                 userInfo += "\nHas side car "
+                vehicle = "Motorbike and a sidecar"
             case 1:
                 userInfo += "\nno side car "
+                vehicle = "Motorbike without a sidecar"
             default:
                 userInfo += "\n "
+                vehicle = "Motorbike and a sidecar"
             }
-            //vehicle = "Motorbike"
         default:
             userInfo += "\n Car"
-            //vehicle = "Car"
+            vehicle = "Car"
         }
       
         switch segemptype.selectedSegmentIndex {
         case 0:
             userInfo += "\nno of clients:" + managertxt.text!
+            calculateInt = managertxt.text!
         case 1:
             userInfo += "\nno of projects:" + programmertxt.text!
+            calculateInt = programmertxt.text!
         case 2:
             userInfo += "\nno of bugs:" + testertxt.text!
+            calculateInt = testertxt.text!
         default:
             userInfo += " "
         }
@@ -147,7 +153,7 @@ class RegisterVC: UIViewController {
     
     func displayEmployeeListVC(){
         let ListVC : EmployeeListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListVC") as! EmployeeListVC
-        let Emp = Employees(firstName: firstNametxt.text!, lastName: lastNametxt.text!, birthYear: birthYeartxt.text!, monthlySalary: monthlySalarytxt.text!, occupationRate: occupationRatetxt.text!, employeeId: employeeIdtxt.text!, vehicleModel: vehicleModeltxt.text!, plateNumber: plateNumbertxt.text!, vehicle: vehicle, vehicleColor: VehicleColorPopUpBtn.currentTitle!  //employeeType: EmployeeTypePopUpBtn.currentTitle!
+        let Emp = Employees(firstName: firstNametxt.text!, lastName: lastNametxt.text!, birthYear: birthYeartxt.text!, monthlySalary: monthlySalarytxt.text!, occupationRate: occupationRatetxt.text!, employeeId: employeeIdtxt.text!, vehicleModel: vehicleModeltxt.text!, plateNumber: plateNumbertxt.text!, vehicle: vehicle, vehicleColor: VehicleColorPopUpBtn.currentTitle!, calculateInt: calculateInt  //employeeType: EmployeeTypePopUpBtn.currentTitle!
         )
 //                ListVC.firstName = firstNametxt.text!
 //                ListVC.lastName = lastNametxt.text!
