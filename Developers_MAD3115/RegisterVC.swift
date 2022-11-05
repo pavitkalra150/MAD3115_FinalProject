@@ -11,8 +11,7 @@ class RegisterVC: UIViewController {
 
     
     @IBOutlet weak var VehicleColorPopUpBtn: UIButton!
-    
-    @IBOutlet weak var EmployeeTypePopUpBtn: UIButton!
+    //@IBOutlet weak var EmployeeTypePopUpBtn: UIButton!
      
     
     @IBOutlet weak var firstNametxt: UITextField!
@@ -23,15 +22,25 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var employeeIdtxt: UITextField!
     @IBOutlet weak var vehicleModeltxt: UITextField!
     @IBOutlet weak var plateNumbertxt: UITextField!
+    @IBOutlet weak var cartypelbl: UILabel!
+    @IBOutlet weak var cartypetxt: UITextField!
+    @IBOutlet weak var sidecarlbl: UILabel!
+    @IBOutlet weak var sidecarseg: UISegmentedControl!
+    @IBOutlet weak var managerlbl: UILabel!
+    @IBOutlet weak var programmerlbl: UILabel!
+    @IBOutlet weak var testerlbl: UILabel!
+    @IBOutlet weak var managertxt: UITextField!
+    @IBOutlet weak var programmertxt: UITextField!
+    @IBOutlet weak var testertxt: UITextField!
     
+    @IBOutlet weak var segemptype: UISegmentedControl!
     @IBOutlet weak var vehicleSeg: UISegmentedControl!
-    
+    var userInfo:String = ""
     var vehicle: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         vehiclePopupButton()
-        empTypePopupButton()
-        
+       // empTypePopupButton()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +70,7 @@ class RegisterVC: UIViewController {
             UIAction(title : "Beige", handler: optionClosure)])
   }
     
-    func empTypePopupButton(){
+    /*func empTypePopupButton(){
 
         let optionClosure = {(action : UIAction) in
             print(action.title)}
@@ -71,7 +80,7 @@ class RegisterVC: UIViewController {
             UIAction(title : "Manager", handler: optionClosure),
             UIAction(title : "Programmer", handler: optionClosure),
             UIAction(title : "Tester", handler: optionClosure)])
-    }
+    }*/
     
     private func showError(_ alert: UIAlertController) {
         let action = UIAlertAction(title: "Retry", style: .cancel)
@@ -79,31 +88,49 @@ class RegisterVC: UIViewController {
         present(alert, animated: true)
     }
     
+    
+    
     @objc func displayInfo(){
-        
-        var userInfo : String = firstNametxt.text!
-        userInfo += "\n" + lastNametxt.text!
-        userInfo += "\n" + birthYeartxt.text!
-        userInfo += "\n" + monthlySalarytxt.text!
-        userInfo += "\n" + occupationRatetxt.text!
-        userInfo += "\n" + employeeIdtxt.text!
-        userInfo += "\n" + vehicleModeltxt.text!
-        userInfo += "\n" + plateNumbertxt.text!
-      
+        userInfo += "First Name :" + firstNametxt.text!
+        userInfo += "\nLast Name:" + lastNametxt.text!
+        userInfo += "\nbirth year:" + birthYeartxt.text!
+        userInfo += "\nSalary:" + monthlySalarytxt.text!
+        userInfo += "\nOccupation Rate:" + occupationRatetxt.text!
+        userInfo += "\nEmp Id:" + employeeIdtxt.text!
+        userInfo += "\nvehicle Model:" + vehicleModeltxt.text!
+        userInfo += "\nplate no:" + plateNumbertxt.text!
         switch vehicleSeg.selectedSegmentIndex {
         case 0:
             userInfo += "\n Car"
-            vehicle = "Car"
+            userInfo += "\ncar Type : " + cartypetxt.text!
+            //vehicle = "Car"
         case 1:
             userInfo += "\n Motorbike"
-            vehicle = "Motorbike"
+            switch sidecarseg.selectedSegmentIndex{
+            case 0:
+                userInfo += "\nHas side car "
+            case 1:
+                userInfo += "\nno side car "
+            default:
+                userInfo += "\n "
+            }
+            //vehicle = "Motorbike"
         default:
             userInfo += "\n Car"
-            vehicle = "Car"
+            //vehicle = "Car"
         }
-        
-        //print(EmployeeTypePopUpBtn.currentTitle)
-        
+      
+        switch segemptype.selectedSegmentIndex {
+        case 0:
+            userInfo += "\nno of clients:" + managertxt.text!
+        case 1:
+            userInfo += "\nno of projects:" + programmertxt.text!
+        case 2:
+            userInfo += "\nno of bugs:" + testertxt.text!
+        default:
+            userInfo += " "
+        }
+       
         let infoAlert = UIAlertController(title: "Verify Details", message: userInfo, preferredStyle: .alert)
         for case let textField as UITextField in self.view.subviews {
             if textField.text == "" {
@@ -118,12 +145,10 @@ class RegisterVC: UIViewController {
         self.present(infoAlert, animated: true, completion: nil)
     }
     
-    
     func displayEmployeeListVC(){
         let ListVC : EmployeeListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListVC") as! EmployeeListVC
-        
-
-        let Emp = Employees(firstName: firstNametxt.text!, lastName: lastNametxt.text!, birthYear: birthYeartxt.text!, monthlySalary: monthlySalarytxt.text!, occupationRate: occupationRatetxt.text!, employeeId: employeeIdtxt.text!, vehicleModel: vehicleModeltxt.text!, plateNumber: plateNumbertxt.text!, vehicle: vehicle, vehicleColor: VehicleColorPopUpBtn.currentTitle!, employeeType: EmployeeTypePopUpBtn.currentTitle!)
+        let Emp = Employees(firstName: firstNametxt.text!, lastName: lastNametxt.text!, birthYear: birthYeartxt.text!, monthlySalary: monthlySalarytxt.text!, occupationRate: occupationRatetxt.text!, employeeId: employeeIdtxt.text!, vehicleModel: vehicleModeltxt.text!, plateNumber: plateNumbertxt.text!, vehicle: vehicle, vehicleColor: VehicleColorPopUpBtn.currentTitle!  //employeeType: EmployeeTypePopUpBtn.currentTitle!
+        )
 //                ListVC.firstName = firstNametxt.text!
 //                ListVC.lastName = lastNametxt.text!
 //                ListVC.birthYear = birthYeartxt.text!
@@ -136,21 +161,51 @@ class RegisterVC: UIViewController {
             navigationController?.pushViewController(ListVC, animated: true)
     }
 
+    @IBAction func vehicleselection() {
+        switch vehicleSeg.selectedSegmentIndex{
+        case 0:
+            cartypelbl.isHidden = false
+            cartypetxt.isHidden = false
+            sidecarlbl.isHidden = true
+            sidecarseg.isHidden = true
+        case 1:
+            sidecarlbl.isHidden = false
+            sidecarseg.isHidden = false
+            cartypelbl.isHidden = true
+            cartypetxt.isHidden = true
+        default:
+            break
+        }
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @IBAction func emptype() {
+        switch segemptype.selectedSegmentIndex{
+        case 0:
+            managerlbl.isHidden = false
+            managertxt.isHidden = false
+            programmerlbl.isHidden = true
+            programmertxt.isHidden = true
+            testerlbl.isHidden = true
+            testertxt.isHidden = true
+        case 1:
+            managerlbl.isHidden = true
+            managertxt.isHidden = true
+            programmerlbl.isHidden = false
+            programmertxt.isHidden = false
+            testerlbl.isHidden = true
+            testertxt.isHidden = true
+        case 2:
+            managerlbl.isHidden = true
+            managertxt.isHidden = true
+            programmerlbl.isHidden = true
+            programmertxt.isHidden = true
+            testerlbl.isHidden = false
+            testertxt.isHidden = false
+        default:break
+        }
+        
+        
+    }
     
     
     //    @IBAction func registerBtn(_ sender: UIButton) {

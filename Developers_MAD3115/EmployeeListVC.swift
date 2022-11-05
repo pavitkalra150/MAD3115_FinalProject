@@ -18,14 +18,14 @@ struct Employees {
     let plateNumber: String?
     let vehicle: String?
     let vehicleColor: String?
-    let employeeType: String?
+    //let employeeType: String?
 }
 
 class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
     var employeeNames: [Employees] = [] 
 
-    
+    var empname:String?
     @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
@@ -46,7 +46,23 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
         cell.EmployeeName.text = item.firstName
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            
+            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let empdetailsVC = mainSB.instantiateViewController(withIdentifier: "empscene") as! empdetailsVC
+            navigationController?.pushViewController(empdetailsVC, animated: true)
+     default:
+            print("No Action")
+        }
+    }
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? empdetailsVC {
+            destination.empName = employeeNames[0].lastName
+            //destination.delegate = self
+        }
+    }
     func addNewEmployee(employee: Employees) {
         employeeNames.append(employee)
     }

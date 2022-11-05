@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="2ed-9V-lmk">
-                                <rect key="frame" x="211" y="138.66666666666666" width="163" height="511.66666666666674"/>
+                                <rect key="frame" x="211" y="76.999999999999972" width="163" height="463.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6N-JS-jZh">
                                         <rect key="frame" x="0.0" y="0.0" width="163" height="34"/>
@@ -96,13 +96,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="monthly salary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Zc-ZY-VHh">
-                                        <rect key="frame" x="0.0" y="144.00000000000003" width="163" height="34"/>
+                                        <rect key="frame" x="0.0" y="144" width="163" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="occupation rate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u06-pA-sck">
-                                        <rect key="frame" x="0.0" y="192.00000000000003" width="163" height="34"/>
+                                        <rect key="frame" x="0.0" y="192" width="163" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -113,41 +113,61 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moS-jU-dD1">
-                                        <rect key="frame" x="0.0" y="288" width="163" height="34.333333333333314"/>
-                                        <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                        <menu key="menu" id="TbG-Nb-G3n">
-                                            <children>
-                                                <command title="Item 1" id="jYM-L7-P5i"/>
-                                                <command title="Item 2" id="iMg-G3-yyS"/>
-                                            </children>
-                                        </menu>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
-                                            <color key="baseForegroundColor" systemColor="labelColor"/>
-                                        </buttonConfiguration>
-                                    </button>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="no of clients" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sgv-mB-79u">
+                                        <rect key="frame" x="0.0" y="281" width="163" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="no of projects" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x6n-Qt-sGE">
+                                        <rect key="frame" x="0.0" y="281" width="163" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="no of bugs" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ryc-FS-Am2">
+                                        <rect key="frame" x="0.0" y="281" width="163" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="spf-78-2g8">
-                                        <rect key="frame" x="0.0" y="336.33333333333337" width="163" height="32"/>
+                                        <rect key="frame" x="0.0" y="288" width="163" height="32"/>
                                         <segments>
                                             <segment title="Car"/>
                                             <segment title="Motorbike"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="vehicleselection" destination="mYa-A6-acM" eventType="valueChanged" id="HBO-Zc-DhW"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="car type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mjn-Pj-qBl">
+                                        <rect key="frame" x="0.0" y="326" width="163" height="0.0"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DNE-zc-xbr">
+                                        <rect key="frame" x="0.0" y="326" width="163" height="1"/>
+                                        <segments>
+                                            <segment title="yes"/>
+                                            <segment title="no"/>
+                                        </segments>
                                     </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wY7-3e-ooU">
-                                        <rect key="frame" x="0.0" y="381.33333333333337" width="163" height="34"/>
+                                        <rect key="frame" x="0.0" y="333" width="163" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="plate number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hw7-yi-8b6">
-                                        <rect key="frame" x="0.0" y="429.33333333333337" width="163" height="34"/>
+                                        <rect key="frame" x="0.0" y="381" width="163" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmI-To-WeK">
-                                        <rect key="frame" x="0.0" y="477.33333333333337" width="163" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="429" width="163" height="34.333333333333314"/>
                                         <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <menu key="menu" id="i4l-BD-Dmq">
                                             <children>
@@ -163,7 +183,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-Ji-lOn">
-                                <rect key="frame" x="16" y="143.66666666666663" width="185" height="504"/>
+                                <rect key="frame" x="16" y="77" width="185" height="456"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UG7-dF-mIt">
                                         <rect key="frame" x="0.0" y="0.0" width="185" height="24"/>
@@ -184,83 +204,143 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-eF-k7r">
-                                        <rect key="frame" x="0.0" y="144.00000000000003" width="130.33333333333334" height="24"/>
+                                        <rect key="frame" x="0.0" y="144" width="130.33333333333334" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupation Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-gp-4Nf">
-                                        <rect key="frame" x="0.0" y="192.00000000000003" width="146" height="24"/>
+                                        <rect key="frame" x="0.0" y="192" width="146" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5n-D4-VbY">
-                                        <rect key="frame" x="0.0" y="240.00000000000003" width="109" height="23.999999999999972"/>
+                                        <rect key="frame" x="0.0" y="240" width="109" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-Ie-t49">
-                                        <rect key="frame" x="0.0" y="288" width="133.33333333333334" height="24"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCq-pM-3Ly">
+                                        <rect key="frame" x="0.0" y="276" width="77.666666666666671" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programmer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00Y-Yi-VdH">
+                                        <rect key="frame" x="0.0" y="276" width="109" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxY-dr-6DG">
+                                        <rect key="frame" x="0.0" y="276" width="54.333333333333336" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7P-R3-TOK">
-                                        <rect key="frame" x="0.0" y="336" width="63.666666666666664" height="24"/>
+                                        <rect key="frame" x="0.0" y="288" width="63.666666666666664" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRQ-Aa-oL0">
+                                        <rect key="frame" x="0.0" y="324" width="74.666666666666671" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Side Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKt-Zh-rUg">
+                                        <rect key="frame" x="0.0" y="324" width="74.666666666666671" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukd-1e-5QX">
-                                        <rect key="frame" x="0.0" y="384" width="123" height="24"/>
+                                        <rect key="frame" x="0.0" y="336" width="123" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plate Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnD-Kq-Puw">
-                                        <rect key="frame" x="0.0" y="432" width="119.66666666666667" height="24"/>
+                                        <rect key="frame" x="0.0" y="384" width="119.66666666666667" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKN-4r-RR3">
-                                        <rect key="frame" x="0.0" y="480" width="115.33333333333333" height="24"/>
+                                        <rect key="frame" x="0.0" y="432" width="115.33333333333333" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="n2C-OF-ZQ0">
+                                <rect key="frame" x="16" y="700" width="368" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pI2-X1-sYG">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mTq-Oz-bbQ">
+                                        <rect key="frame" x="78" y="0.0" width="290" height="32"/>
+                                        <segments>
+                                            <segment title="Manager"/>
+                                            <segment title="Programmer"/>
+                                            <segment title="tester"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="emptype" destination="mYa-A6-acM" eventType="valueChanged" id="cdE-vZ-9dk"/>
+                                            <action selector="vehicleselection" destination="mYa-A6-acM" eventType="valueChanged" id="hVT-6t-Iof"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x5q-dd-SDe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vdg-Ji-lOn" firstAttribute="top" secondItem="x5q-dd-SDe" secondAttribute="top" constant="96.666666666666629" id="O2L-jo-8lW"/>
+                            <constraint firstItem="mTq-Oz-bbQ" firstAttribute="leading" secondItem="x5q-dd-SDe" secondAttribute="leading" constant="94" id="6jd-WG-odY"/>
+                            <constraint firstItem="x5q-dd-SDe" firstAttribute="trailing" secondItem="mTq-Oz-bbQ" secondAttribute="trailing" constant="6" id="Jgv-0B-s2w"/>
+                            <constraint firstItem="vdg-Ji-lOn" firstAttribute="top" secondItem="x5q-dd-SDe" secondAttribute="top" constant="30" id="O2L-jo-8lW"/>
                             <constraint firstItem="vdg-Ji-lOn" firstAttribute="leading" secondItem="rzW-fo-xDS" secondAttribute="leadingMargin" id="O6U-Ab-zab"/>
                             <constraint firstItem="2ed-9V-lmk" firstAttribute="trailing" secondItem="rzW-fo-xDS" secondAttribute="trailingMargin" id="abt-ws-vZD"/>
-                            <constraint firstItem="2ed-9V-lmk" firstAttribute="top" secondItem="x5q-dd-SDe" secondAttribute="top" constant="91.666666666666657" id="o5U-5Q-OPk"/>
+                            <constraint firstItem="2ed-9V-lmk" firstAttribute="top" secondItem="x5q-dd-SDe" secondAttribute="top" constant="30" id="o5U-5Q-OPk"/>
+                            <constraint firstItem="x5q-dd-SDe" firstAttribute="bottom" secondItem="mTq-Oz-bbQ" secondAttribute="bottom" constant="37" id="wK8-Hh-U3B"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rx7-y7-ZZR"/>
                     <connections>
-                        <outlet property="EmployeeTypePopUpBtn" destination="moS-jU-dD1" id="FPL-Zp-aCg"/>
                         <outlet property="VehicleColorPopUpBtn" destination="UmI-To-WeK" id="HGC-1P-UAI"/>
                         <outlet property="birthYeartxt" destination="Lbi-dr-IH1" id="5Le-cg-FkU"/>
+                        <outlet property="cartypelbl" destination="LRQ-Aa-oL0" id="zhF-3R-fno"/>
+                        <outlet property="cartypetxt" destination="mjn-Pj-qBl" id="RHL-P5-hcf"/>
                         <outlet property="employeeIdtxt" destination="eyt-gz-5Vi" id="R48-vk-4sv"/>
                         <outlet property="firstNametxt" destination="T6N-JS-jZh" id="J0U-YE-mwx"/>
                         <outlet property="lastNametxt" destination="iZf-71-mWo" id="dmb-X6-Ffr"/>
+                        <outlet property="managerlbl" destination="pCq-pM-3Ly" id="iji-tY-CSM"/>
+                        <outlet property="managertxt" destination="Sgv-mB-79u" id="hjo-Mm-7Ln"/>
                         <outlet property="monthlySalarytxt" destination="7Zc-ZY-VHh" id="VM0-ei-AgC"/>
                         <outlet property="occupationRatetxt" destination="u06-pA-sck" id="q3U-Ip-ZWr"/>
                         <outlet property="plateNumbertxt" destination="Hw7-yi-8b6" id="T3L-gb-Ez2"/>
+                        <outlet property="programmerlbl" destination="00Y-Yi-VdH" id="pFQ-Qe-eoX"/>
+                        <outlet property="programmertxt" destination="x6n-Qt-sGE" id="LVJ-V6-qs4"/>
+                        <outlet property="segemptype" destination="mTq-Oz-bbQ" id="k2x-zh-uRE"/>
+                        <outlet property="sidecarlbl" destination="oKt-Zh-rUg" id="kjw-mM-JVN"/>
+                        <outlet property="sidecarseg" destination="DNE-zc-xbr" id="DBl-cq-pS0"/>
+                        <outlet property="testerlbl" destination="nxY-dr-6DG" id="nhx-f5-2oc"/>
+                        <outlet property="testertxt" destination="ryc-FS-Am2" id="oPp-bx-7XQ"/>
                         <outlet property="vehicleModeltxt" destination="wY7-3e-ooU" id="THc-PS-db6"/>
-                        <outlet property="vehicleSeg" destination="spf-78-2g8" id="Crs-8H-KY3"/>
+                        <outlet property="vehicleSeg" destination="spf-78-2g8" id="Oxl-zK-GK1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9B-7b-Igy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1811" y="4"/>
+            <point key="canvasLocation" x="1780" y="3.5545023696682461"/>
         </scene>
         <!--Employee ListVC-->
         <scene sceneID="hbA-Po-iXI">
@@ -324,6 +404,39 @@
             </objects>
             <point key="canvasLocation" x="2509.2307692307691" y="3.5545023696682461"/>
         </scene>
+        <!--EmpdetailsVC-->
+        <scene sceneID="rhv-Am-Ubw">
+            <objects>
+                <viewController storyboardIdentifier="empscene" id="vPc-nX-fjh" customClass="empdetailsVC" customModule="Developers_MAD3115" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wUZ-4N-3ha">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-pZ-bRg">
+                                <rect key="frame" x="35" y="82" width="320" height="283"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QKb-3F-QRt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QKb-3F-QRt" firstAttribute="bottom" secondItem="kqa-pZ-bRg" secondAttribute="bottom" constant="445" id="5ci-lB-P0A"/>
+                            <constraint firstItem="QKb-3F-QRt" firstAttribute="trailing" secondItem="kqa-pZ-bRg" secondAttribute="trailing" constant="35" id="9uK-Go-yic"/>
+                            <constraint firstItem="kqa-pZ-bRg" firstAttribute="leading" secondItem="QKb-3F-QRt" secondAttribute="leading" constant="35" id="VhV-Is-zal"/>
+                            <constraint firstItem="kqa-pZ-bRg" firstAttribute="top" secondItem="QKb-3F-QRt" secondAttribute="top" constant="35" id="wbv-t8-ByD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="empdetailstxt" destination="kqa-pZ-bRg" id="OYO-tf-tya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9D-4K-9yJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3221.5384615384614" y="-14.218009478672984"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="xAx-Of-qL1">
             <objects>
@@ -356,6 +469,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
