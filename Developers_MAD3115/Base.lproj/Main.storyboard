@@ -382,6 +382,7 @@
                                         <connections>
                                             <outlet property="EmployeeName" destination="Wmx-di-alG" id="HbY-rE-saX"/>
                                             <outlet property="subtitletxt" destination="IbZ-69-AiK" id="7ya-Ht-kTQ"/>
+                                            <segue destination="vPc-nX-fjh" kind="show" identifier="empdetailsseg" id="t8g-8Y-wXw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -413,7 +414,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-pZ-bRg">
-                                <rect key="frame" x="35" y="82" width="320" height="283"/>
+                                <rect key="frame" x="35" y="82" width="320" height="234"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
@@ -429,6 +430,7 @@
                             <constraint firstItem="kqa-pZ-bRg" firstAttribute="top" secondItem="QKb-3F-QRt" secondAttribute="top" constant="35" id="wbv-t8-ByD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ups-G4-NdE"/>
                     <connections>
                         <outlet property="empdetailstxt" destination="kqa-pZ-bRg" id="OYO-tf-tya"/>
                     </connections>

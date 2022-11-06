@@ -34,7 +34,7 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
     let id: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(employeeNames)
+        //print(employeeNames)
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Employees"
         self.navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddEmpBtn))
@@ -62,22 +62,23 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            
-            let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let empdetailsVC = mainSB.instantiateViewController(withIdentifier: "empscene") as! empdetailsVC
-            navigationController?.pushViewController(empdetailsVC, animated: true)
-     default:
-            print("No Action")
-        }
+        let data = employeeNames[indexPath.row]
+        print(data)
     }
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? empdetailsVC {
-            destination.empName = employeeNames[0].lastName
-            //destination.delegate = self
-        }
-    }
+//   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? empdetailsVC {
+//            destination.empName = employeeNames[0].lastName
+//            //destination.delegate = self
+//        }
+//    }
+//    func prepareforSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+//        if(segue.identifier == "empdetailsseg"){
+//            var moveVC: empdetailsVC = segue.destination as! empdetailsVC
+//            var selectedRowIndex = self.table.indexPathForSelectedRow
+//            moveVC.test = employeeNames[selectedRowIndex!.row][firstName] as String
+//
+//        }
+//    }
     func addNewEmployee(employee: Employees) {
         employeeNames.append(employee)
     }

@@ -8,16 +8,32 @@
 import UIKit
 
 class empdetailsVC: UIViewController {
-
+//    struct Employees {
+//        let firstName: String?
+//        let lastName: String?
+//        let birthYear: String?
+//        let monthlySalary: String?
+//        let occupationRate: String?
+//        let employeeId: String?
+//        let vehicleModel: String?
+//        let plateNumber: String?
+//        let vehicle: String?
+//        let vehicleColor: String?
+//        let calculateInt: String?
+//        let employeeType: String?
+//        //let employeeType: String?
+//    }
     var empName:String?
-
+    //var test: Int = 0
     @IBOutlet weak var empdetailstxt: UILabel!
-    
-    weak var delegate: HomeController?
+//    var data: [Employees] = []
+//    weak var delegate: HomeController?
     override func viewDidLoad() {
         super.viewDidLoad()
         empdetailstxt.text = self.empName
         // Do any additional setup after loading the view.
+        //empdetailstxt.text = data.firstName
+        //print(test)
     }
     
 
