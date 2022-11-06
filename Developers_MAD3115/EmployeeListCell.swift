@@ -12,6 +12,7 @@ class EmployeeListCell: UITableViewCell {
     
     @IBOutlet weak var EmployeeName: UILabel!
     
+    @IBOutlet weak var subtitletxt: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

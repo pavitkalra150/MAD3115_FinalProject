@@ -22,7 +22,6 @@ struct Employees {
     let vehicleColor: String?
     let calculateInt: String?
     let employeeType: String?
-    
     //let employeeType: String?
 }
 
@@ -32,7 +31,7 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
     var delegate: AddEmployeeDelegate?
     var empname:String?
     @IBOutlet weak var table: UITableView!
-    
+    let id: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         print(employeeNames)
@@ -54,8 +53,12 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let item =  employeeNames[indexPath.row]
+        let first = item.firstName
+        let last = item.lastName
+        let idstr = String(indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EmployeeListCell
-        cell.EmployeeName.text = item.firstName
+        cell.EmployeeName.text =  "Name: " + first! + " " + last!
+        cell.subtitletxt.text = "Id: " + idstr
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
