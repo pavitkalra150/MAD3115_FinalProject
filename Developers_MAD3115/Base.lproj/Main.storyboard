@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Developers_MAD3115" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeController" customModule="Developers_MAD3115" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,13 +22,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="ADD">
+                                <buttonConfiguration key="configuration" style="filled" title="Employee List">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" systemColor="systemGray5Color"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="Addbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOd-lb-ebO"/>
+                                    <action selector="Addbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHv-HV-6cv"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lambton" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-J4-hVV">
@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016.9230769230769" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="978" y="402"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="Z4p-I5-4g3">
@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9B-7b-Igy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="2600" y="4"/>
         </scene>
         <!--Employee ListVC-->
         <scene sceneID="hbA-Po-iXI">
@@ -381,15 +381,6 @@
                                     <outlet property="delegate" destination="uyY-rD-Cq5" id="xqB-NT-0WM"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-Pv-1nT">
-                                <rect key="frame" x="16" y="726" width="358" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Employee"/>
-                                <connections>
-                                    <action selector="AddEmpBtn:" destination="uyY-rD-Cq5" eventType="touchUpInside" id="E2Z-vu-cIA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lj3-Cp-ZId"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -402,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjq-O3-kpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2509.2307692307691" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="1777" y="4"/>
         </scene>
         <!--EmpdetailsVC-->
         <scene sceneID="rhv-Am-Ubw">
@@ -435,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9D-4K-9yJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3221.5384615384614" y="-14.218009478672984"/>
+            <point key="canvasLocation" x="1777" y="685"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xAx-Of-qL1">
@@ -453,7 +444,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAh-YP-RLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113.84615384615384" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="60" y="402"/>
         </scene>
     </scenes>
     <resources>

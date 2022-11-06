@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+protocol AddEmployeeDelegate {
+    func addEmployee(employee: Employees)
+}
 struct Employees {
     let firstName: String?
     let lastName: String?
@@ -19,7 +21,7 @@ struct Employees {
     let vehicle: String?
     let vehicleColor: String?
     let calculateInt: String?
-    
+    let employeeType: String?
     
     //let employeeType: String?
 }
@@ -27,13 +29,19 @@ struct Employees {
 class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
     var employeeNames: [Employees] = [] 
-
+    var delegate: AddEmployeeDelegate?
     var empname:String?
     @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(employeeNames)
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "Employees"
+        self.navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddEmpBtn))
+        view.backgroundColor = .white
+        
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell"))
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -75,11 +83,27 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
         table.reloadData()
     }
     @IBAction func AddEmpBtn(_ sender: UIButton) {
+        //let controller = RegisterVC()
+        //controller.delegate = self
         let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let RegisterScene = mainSB.instantiateViewController(withIdentifier: "RegisterScene")
-        
+        let RegisterScene = mainSB.instantiateViewController(withIdentifier: "RegisterScene") as! RegisterVC
+        RegisterScene.delegate = self
         navigationController?.pushViewController(RegisterScene, animated: true)
+//        self.pus(UINavigationController(rootViewController: controller), animated: true, completion: nil)
     }
     
+    @objc func handleAddEmployee(){
+        self.present(UINavigationController(rootViewController: RegisterVC()), animated: true, completion: nil)
+    }
     
+}
+
+extension EmployeeListVC: AddEmployeeDelegate{
+    
+    func addEmployee(employee: Employees) {
+        
+            self.employeeNames.append(employee)
+            self.table.reloadData()
+        
+    }
 }

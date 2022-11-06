@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
     
     @IBOutlet var logo: UIImage!
     override func viewDidLoad() {
@@ -18,9 +18,9 @@ class ViewController: UIViewController {
     
     @IBAction func Addbutton(_ sender: UIButton) {
         let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let RegisterScene = mainSB.instantiateViewController(withIdentifier: "RegisterScene")
+        let ListVC = mainSB.instantiateViewController(withIdentifier: "ListVC")
         
-        navigationController?.pushViewController(RegisterScene, animated: true)
+        navigationController?.pushViewController(ListVC, animated: true)
     }
     
 

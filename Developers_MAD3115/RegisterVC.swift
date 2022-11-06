@@ -7,8 +7,12 @@
 
 import UIKit
 
+//protocol AddEmployeeDelegate {
+//    func addEmployee(employee: Employees)
+//}
 class RegisterVC: UIViewController {
 
+    var delegate: AddEmployeeDelegate?
     
     @IBOutlet weak var VehicleColorPopUpBtn: UIButton!
     //@IBOutlet weak var EmployeeTypePopUpBtn: UIButton!
@@ -38,6 +42,7 @@ class RegisterVC: UIViewController {
     var userInfo:String = ""
     var vehicle: String!
     var calculateInt: String!
+    var employeeType: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         vehiclePopupButton()
@@ -47,8 +52,10 @@ class RegisterVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Registration Form"
         navigationController?.setNavigationBarHidden(false, animated: true)
-        let btnSubmit = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(displayInfo))
-        self.navigationItem.rightBarButtonItem = btnSubmit
+//        let btnSubmit = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(displayInfo))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(displayInfo))
+        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handelCancel))
+//        self.navigationItem.rightBarButtonItem = btnSubmit
     }
     
     func vehiclePopupButton(){
@@ -126,12 +133,15 @@ class RegisterVC: UIViewController {
         switch segemptype.selectedSegmentIndex {
         case 0:
             userInfo += "\nno of clients:" + managertxt.text!
+            employeeType = "Manager"
             calculateInt = managertxt.text!
         case 1:
             userInfo += "\nno of projects:" + programmertxt.text!
+            employeeType = "Programmer"
             calculateInt = programmertxt.text!
         case 2:
             userInfo += "\nno of bugs:" + testertxt.text!
+            employeeType = "Tester"
             calculateInt = testertxt.text!
         default:
             userInfo += " "
@@ -150,10 +160,13 @@ class RegisterVC: UIViewController {
         infoAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(infoAlert, animated: true, completion: nil)
     }
+    @objc func handelCancel(){
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func displayEmployeeListVC(){
-        let ListVC : EmployeeListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListVC") as! EmployeeListVC
-        let Emp = Employees(firstName: firstNametxt.text!, lastName: lastNametxt.text!, birthYear: birthYeartxt.text!, monthlySalary: monthlySalarytxt.text!, occupationRate: occupationRatetxt.text!, employeeId: employeeIdtxt.text!, vehicleModel: vehicleModeltxt.text!, plateNumber: plateNumbertxt.text!, vehicle: vehicle, vehicleColor: VehicleColorPopUpBtn.currentTitle!, calculateInt: calculateInt  //employeeType: EmployeeTypePopUpBtn.currentTitle!
+        //let ListVC : EmployeeListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListVC") as! EmployeeListVC
+        let Emp = Employees(firstName: firstNametxt.text!, lastName: lastNametxt.text!, birthYear: birthYeartxt.text!, monthlySalary: monthlySalarytxt.text!, occupationRate: occupationRatetxt.text!, employeeId: employeeIdtxt.text!, vehicleModel: vehicleModeltxt.text!, plateNumber: VehicleColorPopUpBtn.currentTitle!, vehicle: plateNumbertxt.text!, vehicleColor: vehicle,  calculateInt: calculateInt, employeeType: employeeType  //employeeType: EmployeeTypePopUpBtn.currentTitle!
         )
 //                ListVC.firstName = firstNametxt.text!
 //                ListVC.lastName = lastNametxt.text!
@@ -163,8 +176,11 @@ class RegisterVC: UIViewController {
 //                ListVC.employeeId = employeeIdtxt.text!
 //                ListVC.vehicle = vehicle!
 //                ListVC.plateNumber = plateNumbertxt.text!
-            ListVC.addNewEmployee(employee: Emp)
-            navigationController?.pushViewController(ListVC, animated: true)
+        //vehicleColor: VehicleColorPopUpBtn.currentTitle!,
+            delegate?.addEmployee(employee: Emp)
+            navigationController?.popViewController(animated: true)
+            //ListVC.addNewEmployee(employee: Emp)
+            //navigationController?.pushViewController(ListVC, animated: true)
     }
 
     @IBAction func vehicleselection() {

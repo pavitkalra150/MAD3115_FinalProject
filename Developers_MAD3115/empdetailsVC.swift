@@ -13,7 +13,7 @@ class empdetailsVC: UIViewController {
 
     @IBOutlet weak var empdetailstxt: UILabel!
     
-    weak var delegate: ViewController?
+    weak var delegate: HomeController?
     override func viewDidLoad() {
         super.viewDidLoad()
         empdetailstxt.text = self.empName
