@@ -22,6 +22,8 @@ struct Employees {
     let vehicleColor: String?
     let calculateInt: String?
     let employeeType: String?
+    let vehicleSide: String?
+    let carType: String?
     //let employeeType: String?
 }
 
@@ -39,6 +41,8 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
         self.navigationItem.title = "Employees"
         self.navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(AddEmpBtn))
         view.backgroundColor = .white
+         table.delegate = self
+         table.dataSource = self
         
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell"))
     }
@@ -62,8 +66,25 @@ class EmployeeListVC: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = employeeNames[indexPath.row]
-        print(data)
+//        let data = employeeNames[indexPath.row]
+//        print(data)
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "empdetailsVC") as? empdetailsVC{
+            vc.firstName = employeeNames[indexPath.row].firstName
+            vc.lastName = employeeNames[indexPath.row].lastName
+            vc.birthYear = employeeNames[indexPath.row].birthYear
+            vc.monthlySalary = employeeNames[indexPath.row].monthlySalary
+            vc.occupationRate = employeeNames[indexPath.row].occupationRate
+            vc.employeeId = employeeNames[indexPath.row].employeeId
+            vc.vehicleModel = employeeNames[indexPath.row].vehicleModel
+            vc.plateNumber = employeeNames[indexPath.row].plateNumber
+            vc.vehicle = employeeNames[indexPath.row].vehicle
+            vc.vehicleColor = employeeNames[indexPath.row].vehicleColor
+            vc.calculateInt = employeeNames[indexPath.row].calculateInt
+            vc.employeeType = employeeNames[indexPath.row].employeeType
+            vc.vehicleSide = employeeNames[indexPath.row].vehicleSide
+            vc.carType = employeeNames[indexPath.row].carType
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 //   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let destination = segue.destination as? empdetailsVC {
